@@ -1,0 +1,162 @@
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  background: #000;
+  border-radius: 0 0 72px 72px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 97px; /* header height */
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: clamp(60px, 8vw, 120px) clamp(24px, 5.4vw, 105px);
+  width: 100%;
+}
+
+.hero-title {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto 40px;
+  color: #FFF;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: clamp(40px, 5.44vw, 104.441px);
+  font-style: normal;
+  line-height: clamp(43px, 5.84vw, 112.121px);
+  letter-spacing: clamp(-0.8px, -0.11vw, -2.089px);
+}
+
+.hero-title-line {
+  display: inline;
+}
+
+.hero-title-line--medium {
+  font-weight: 500;
+}
+
+.hero-title-line--bold {
+  font-weight: 700;
+}
+
+.hero-sub {
+  width: 100%;
+  max-width: 1614px;
+  margin: 0 auto 60px;
+  color: #FFF;
+  text-align: center;
+  font-family: var(--font-inter);
+  font-size: clamp(16px, 1.19vw, 22.745px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: clamp(27px, 2.02vw, 38.666px);
+}
+
+.hero-solutions { text-align: center; }
+.hero-solutions-label {
+  color: #FFF;
+  font-family: var(--font-body);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 46px;
+  margin-bottom: 28px;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.hero-pill {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-sizing: border-box;
+  width: 412px;
+  min-width: 412px;
+  max-width: 412px;
+  height: 163px;
+  min-height: 163px;
+  max-height: 163px;
+  padding: 0 32px 0 24px;
+  border-radius: 100px;
+  background: #1F2123;
+  flex: 0 0 412px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.hero-pill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(255,255,255,0.08);
+}
+
+.hero-pill-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+}
+
+.hero-pill-icon--regulator {
+  width: 72px;
+  height: 72px;
+}
+
+.hero-pill-icon--operational {
+  width: 83.5px;
+  height: 83.5px;
+}
+
+.hero-pill-text {
+  color: #FFF;
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  white-space: pre-line;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-pills { flex-wrap: wrap; }
+  .hero-title {
+    font-size: clamp(32px, 6vw, 64px);
+    line-height: 1.07;
+    letter-spacing: -0.02em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-pills { flex-direction: column; align-items: center; }
+  .hero-pill {
+    width: min(412px, 90vw);
+    min-width: unset;
+    max-width: min(412px, 90vw);
+    height: auto;
+    min-height: 120px;
+    max-height: none;
+    flex: 0 0 auto;
+    padding: 14px 20px;
+    gap: 12px;
+  }
+  .hero-pill-text { font-size: 18px; line-height: 26px; }
+  .hero-solutions-label { font-size: 22px; }
+}

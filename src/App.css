@@ -1,0 +1,4 @@
+/* App wrapper */
+#root { min-height: 100vh; }
+
+/* No App.css specific styles – all in index.css */

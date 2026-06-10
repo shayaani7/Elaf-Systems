@@ -1,0 +1,118 @@
+/* ===== SERVICES ===== */
+.services-section {
+  padding: clamp(60px, 8vw, 120px) 0 clamp(40px, 4vw, 60px);
+  background: #fff;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2vw, 28px);
+  margin-bottom: 40px;
+}
+
+.srv-card {
+  background: var(--clr-gray);
+  border-radius: 40px;
+  padding: clamp(28px, 3vw, 52px) clamp(20px, 2vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s;
+  min-height: 580px;
+}
+.srv-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(88,70,251,0.1); }
+
+.srv-icon-wrap { margin-bottom: 40px; }
+.srv-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #5846FB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.srv-card:hover .srv-circle { transform: scale(1.08) rotate(-3deg); }
+
+.srv-icon-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
+}
+
+.srv-title {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(28px, 2.35vw, 45px);
+  line-height: 1.51;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.srv-desc {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: #000;
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+.srv-target {
+  margin: 0 0 20px;
+}
+
+.srv-label {
+  font-weight: 700;
+}
+
+.srv-what-heading {
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+.srv-what-text {
+  margin: 0;
+  font-weight: 400;
+}
+
+.srv-learn-more {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--clr-purple);
+  transition: gap 0.2s, color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.srv-learn-more::after { content: ' →'; transition: transform 0.2s; display: inline-block; }
+.srv-card:hover .srv-learn-more::after { transform: translateX(4px); }
+
+.services-see-all {
+  text-align: center;
+  padding: 20px 0;
+}
+.services-see-all a {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 22px;
+  color: #000;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.services-see-all a:hover { color: var(--clr-purple); }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .srv-card { min-height: auto; }
+}

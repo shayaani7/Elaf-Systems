@@ -1,0 +1,236 @@
+/* ===== CLIENTS ===== */
+.clients-section {
+  padding: clamp(60px, 8vw, 120px) 0 clamp(40px, 4vw, 60px);
+  background: #fff;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+.clients-banner {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.clients-banner-top {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.04em;
+  color: var(--clr-navy);
+  margin-bottom: 8px;
+}
+
+.clients-headline {
+  color: #0A1628;
+  font-family: var(--font-body);
+  font-size: 90.356px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 97px;
+  letter-spacing: -3.614px;
+  margin-bottom: 12px;
+}
+
+.clients-regions {
+  color: rgba(10, 22, 40, 0.50);
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 97px;
+  letter-spacing: -0.8px;
+}
+
+@media (max-width: 1200px) {
+  .clients-headline {
+    font-size: clamp(32px, 7vw, 90.356px);
+    line-height: clamp(36px, 7.5vw, 97px);
+    letter-spacing: clamp(-1.2px, -0.28vw, -3.614px);
+  }
+
+  .clients-regions {
+    line-height: clamp(28px, 4vw, 97px);
+    font-size: clamp(14px, 1.6vw, 20px);
+    letter-spacing: clamp(-0.4px, -0.06vw, -0.8px);
+  }
+}
+
+/* Marquee */
+.clients-marquee {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 32px);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-bottom: 48px;
+}
+
+.marquee-track {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  gap: clamp(64px, 6.5vw, 110px);
+  width: max-content;
+  animation: marquee-scroll 35s linear infinite;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Logo items */
+.client-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+.client-logo-img {
+  display: block;
+  height: 40px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.3s;
+}
+
+.client-logo:hover .client-logo-img {
+  opacity: 1;
+}
+
+.client-logo--sofance {
+  width: auto;
+  height: 40px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: #1A1A1A;
+  overflow: hidden;
+}
+
+.client-logo--sofance .client-logo-img {
+  height: 28px;
+  width: auto;
+  opacity: 1;
+}
+
+.client-logo--thbigworld {
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: #1A3A2A;
+  overflow: hidden;
+}
+
+.client-logo--thbigworld .client-logo-img {
+  height: 28px;
+  opacity: 1;
+}
+
+.client-logo--golden-promise {
+  width: auto;
+  height: 40px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  background: #1A1A1A;
+  overflow: hidden;
+}
+
+.client-logo--golden-promise .client-logo-img {
+  height: 32px;
+  width: auto;
+  opacity: 1;
+}
+
+.client-logo--quan2um {
+  width: auto;
+  height: 40px;
+  padding: 4px 14px;
+  border-radius: 8px;
+  background: #1A1A1A;
+  overflow: hidden;
+}
+
+.client-logo--quan2um .client-logo-img {
+  height: 30px;
+  width: auto;
+  opacity: 1;
+}
+
+/* CTA */
+.clients-cta {
+  text-align: center;
+}
+
+.clients-case-studies {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  border: 1px solid #5846FB;
+  border-radius: 100px;
+  color: #5846FB;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.clients-case-studies:hover {
+  background: #5846FB;
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .client-logo-img {
+    height: 32px;
+  }
+
+  .client-logo--sofance,
+  .client-logo--golden-promise,
+  .client-logo--quan2um,
+  .client-logo--thbigworld {
+    height: 36px;
+  }
+
+  .client-logo--sofance .client-logo-img,
+  .client-logo--thbigworld .client-logo-img {
+    height: 22px;
+  }
+
+  .client-logo--golden-promise .client-logo-img {
+    height: 26px;
+  }
+
+  .client-logo--quan2um .client-logo-img {
+    height: 24px;
+  }
+}

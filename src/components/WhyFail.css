@@ -1,0 +1,228 @@
+/* ===== WHY FAIL ===== */
+.whyfail-section {
+  padding: clamp(60px, 8vw, 120px) 0;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.whyfail-hero {
+  position: relative;
+  margin-bottom: 0;
+  padding-bottom: clamp(100px, 12vw, 180px);
+}
+
+.whyfail-home-deco {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 264px;
+  height: 264px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  object-position: left bottom;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.whyfail-header-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.whyfail-title {
+  color: #000;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: clamp(36px, 5.2vw, 100px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: clamp(40px, 5.72vw, 110px);
+  letter-spacing: -2px;
+  max-width: 1413px;
+  margin: 0 auto 32px;
+}
+
+.whyfail-sub {
+  color: #0A1628;
+  text-align: center;
+  font-family: var(--font-montserrat);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 35px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.whyfail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 1.5vw, 28px);
+  margin-top: 0;
+  align-items: start;
+  width: 100%;
+}
+
+.fail-card {
+  background: #F0F0F0;
+  border-radius: 40px;
+  width: 100%;
+  max-width: 552px;
+  height: auto;
+  aspect-ratio: 552 / 698;
+  justify-self: center;
+  padding: clamp(28px, 3vw, 60px) clamp(20px, 2.2vw, 40px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.fail-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 40px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+.fail-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(88,70,251,0.12); }
+.fail-card:hover::after { border-color: rgba(88,70,251,0.25); }
+
+.fail-icon-wrap { margin-bottom: 48px; }
+.fail-icon-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--clr-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fail-icon-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
+}
+
+.fail-title {
+  max-width: 100%;
+  color: #000;
+  font-family: var(--font-body);
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 68px;
+  margin: 0 0 20px;
+  white-space: pre-line;
+}
+
+.fail-desc {
+  color: #000;
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  white-space: pre-line;
+}
+
+/* Large screens — full Figma card size */
+@media (min-width: 1800px) {
+  .whyfail-grid {
+    grid-template-columns: repeat(3, 552px);
+    justify-content: center;
+  }
+
+  .fail-card {
+    width: 552px;
+    height: 698px;
+    aspect-ratio: auto;
+  }
+}
+
+/* Laptop — scale type to fit narrower cards */
+@media (max-width: 1799px) {
+  .fail-title {
+    width: 100% !important;
+    font-size: clamp(26px, 2.4vw, 45px);
+    line-height: clamp(38px, 3.6vw, 68px);
+  }
+
+  .fail-desc {
+    font-size: clamp(16px, 1.35vw, 22px);
+    line-height: clamp(22px, 1.85vw, 30px);
+  }
+
+  .fail-icon-wrap {
+    margin-bottom: clamp(28px, 3.5vw, 48px);
+  }
+
+  .fail-icon-circle {
+    width: clamp(60px, 5.5vw, 80px);
+    height: clamp(60px, 5.5vw, 80px);
+  }
+
+  .fail-icon-img {
+    width: clamp(28px, 2.5vw, 36px);
+    height: clamp(28px, 2.5vw, 36px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .whyfail-hero {
+    margin-bottom: 0;
+    padding-top: 232px;
+    padding-bottom: clamp(64px, 10vw, 120px);
+  }
+
+  .whyfail-home-deco {
+    top: 0;
+    bottom: auto;
+    object-position: left top;
+    width: min(264px, 65vw);
+    height: min(264px, 65vw);
+  }
+
+  .whyfail-grid {
+    grid-template-columns: 1fr;
+    max-width: 552px;
+    margin: 0 auto;
+  }
+
+  .fail-card {
+    width: 100%;
+    max-width: 552px;
+    height: auto;
+    aspect-ratio: auto;
+    min-height: 520px;
+    justify-self: stretch;
+  }
+
+  .fail-title {
+    width: 100%;
+    font-size: clamp(28px, 5vw, 45px);
+    line-height: clamp(42px, 7.5vw, 68px);
+  }
+  .whyfail-sub {
+    font-size: clamp(16px, 1.15vw, 22px);
+    line-height: clamp(26px, 1.8vw, 35px);
+  }
+}
+
+@media (max-width: 600px) {
+  .whyfail-hero {
+    padding-top: 212px;
+  }
+
+  .whyfail-home-deco {
+    width: min(220px, 60vw);
+    height: min(220px, 60vw);
+  }
+}

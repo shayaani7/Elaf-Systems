@@ -1,0 +1,463 @@
+/* ===== ABOUT ===== */
+.about-section {
+  padding: clamp(80px, 8vw, 140px) 0;
+  background: #fff;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 5vw, 80px);
+  align-items: start;
+}
+
+/* Left */
+.about-title {
+  color: #000;
+  font-family: var(--font-body);
+  font-size: clamp(42px, 6.15vw, 118.125px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: clamp(43px, 6.3vw, 121px);
+  letter-spacing: -2.362px;
+  margin-bottom: 40px;
+}
+
+.about-title-line {
+  display: block;
+  white-space: nowrap;
+}
+
+.about-desc {
+  color: #000;
+  font-family: var(--font-body);
+  font-size: clamp(16px, 1.19vw, 22px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: clamp(28px, 2.02vw, 36px);
+  white-space: pre-line;
+  max-width: 651px;
+}
+
+.about-actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 40px);
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.about-explore-btn {
+  color: #FFF;
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+/* Right — stats column capped at design width */
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 840px;
+  min-width: 0;
+}
+
+.about-top-stats {
+  width: 100%;
+}
+
+.about-visual-wrap {
+  position: relative;
+  width: 100%;
+  min-height: clamp(300px, 40vw, 430px);
+  padding-top: 48px;
+}
+
+.about-deco-coin {
+  display: block;
+  width: min(390px, 62%);
+  height: auto;
+  aspect-ratio: 130 / 73;
+  border-radius: 100px;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  transform: translateY(32px);
+}
+
+.about-deco-hand {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(322px, 44%);
+  height: auto;
+  aspect-ratio: 159 / 199;
+  object-fit: contain;
+  z-index: 3;
+  transform: translateY(-44px);
+  pointer-events: none;
+}
+
+/* 15+ row — left under coin, bitcoin on the right */
+.about-years-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 40px;
+  position: relative;
+  z-index: 2;
+  gap: 12px;
+}
+
+.about-years-text {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: clamp(8px, 1.5vw, 16px);
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+.about-years-val {
+  color: #000;
+  font-family: var(--font-body);
+  font-size: clamp(40px, 5vw, 72px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: clamp(48px, 5.5vw, 86px);
+  flex-shrink: 0;
+}
+
+.about-years-lbl {
+  color: #000;
+  font-family: var(--font-body);
+  font-size: clamp(18px, 2.8vw, 46.047px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: clamp(22px, 3.2vw, 55px);
+}
+
+.about-bitcoin-icon {
+  width: clamp(80px, 12vw, 160px);
+  height: clamp(80px, 12vw, 160px);
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-top: -8px;
+  align-self: center;
+}
+
+/* 200+ Clients bar */
+.about-clients-bar {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 840px;
+  height: clamp(120px, 12vw, 160px);
+  border-radius: 100px;
+  background: #5846FB;
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw, 24px);
+  padding: 0 clamp(24px, 4vw, 48px);
+  flex-shrink: 0;
+}
+
+.about-clients-val {
+  color: #FFF;
+  font-family: var(--font-body);
+  font-size: clamp(36px, 5vw, 72px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: clamp(44px, 5.5vw, 86px);
+  flex-shrink: 0;
+}
+
+.about-clients-lbl {
+  color: #FFF;
+  font-family: var(--font-body);
+  font-size: 67.372px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 73.497px;
+}
+
+/* Bottom row — 4M+ | circle | 100+ */
+.about-bottom-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 840px;
+}
+
+.about-stat-pill {
+  box-sizing: border-box;
+  height: 160px;
+  border-radius: 100px;
+  background: #F0F0F0;
+  flex-shrink: 0;
+}
+
+.about-stat-val {
+  color: #070E1A;
+  font-family: var(--font-body);
+  font-size: clamp(28px, 2.8vw, 45.134px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 38.071px;
+  letter-spacing: 0.685px;
+}
+
+.about-center-badge {
+  width: 160px;
+  height: 160px;
+  min-width: 160px;
+  object-fit: contain;
+  display: block;
+  flex: 0 0 160px;
+}
+
+.about-models-card {
+  box-sizing: border-box;
+  width: 374px;
+  min-width: 374px;
+  height: 160px;
+  border-radius: 100px;
+  background: #F0F0F0;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  flex: 0 0 374px;
+}
+
+.about-models-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.about-models-lbl {
+  color: #000;
+  font-family: var(--font-body);
+  font-size: clamp(18px, 2vw, 30px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+.about-words-card {
+  width: 290px;
+  min-width: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 32px;
+  gap: 2px;
+  flex: 0 0 290px;
+}
+
+.about-words-lbl {
+  color: #000;
+  font-family: var(--font-body);
+  font-size: clamp(16px, 1.5vw, 22px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+/* Large screens — exact Figma sizes */
+@media (min-width: 1280px) {
+  .about-visual-wrap {
+    min-height: 430px;
+    padding-top: 56px;
+  }
+
+  .about-deco-coin {
+    width: 390px;
+    height: 219px;
+    transform: translateY(36px);
+  }
+
+  .about-deco-hand {
+    width: 322px;
+    height: 403px;
+    transform: translateY(-56px);
+  }
+
+  .about-years-row {
+    margin-top: 44px;
+  }
+
+  .about-bitcoin-icon {
+    width: 160px;
+    height: 160px;
+    margin-top: -12px;
+  }
+
+  .about-clients-bar {
+    height: 160px;
+  }
+
+  .about-stat-pill,
+  .about-models-card {
+    height: 160px;
+  }
+
+  .about-words-card {
+    width: 290px;
+  }
+
+  .about-models-card {
+    width: 374px;
+  }
+
+  .about-center-badge {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* Laptop / tablet — single column so stats get full width */
+@media (max-width: 1279px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-right {
+    max-width: 840px;
+    margin: 0 auto;
+  }
+
+  .about-title-line {
+    white-space: normal;
+  }
+
+  .about-bottom-row {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .about-bottom-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .about-clients-lbl {
+    font-size: clamp(22px, 4.5vw, 67.372px);
+    line-height: clamp(28px, 5vw, 73.497px);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-visual-wrap {
+    min-height: unset;
+    padding-top: 24px;
+    display: grid;
+    justify-items: center;
+    gap: 12px;
+  }
+
+  .about-deco-hand {
+    position: static;
+    transform: none;
+    width: min(260px, 70%);
+    grid-row: 1;
+    justify-self: end;
+    margin-right: 0;
+  }
+
+  .about-deco-coin {
+    width: 100%;
+    max-width: 390px;
+    transform: none;
+    grid-row: 2;
+    justify-self: start;
+  }
+
+  .about-years-row {
+    grid-row: 3;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .about-years-text {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about-bitcoin-icon {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .about-clients-bar {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 120px;
+    padding: 20px 28px;
+  }
+
+  .about-bottom-row {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow-x: visible;
+  }
+
+  .about-words-card,
+  .about-models-card {
+    width: 100%;
+    max-width: 374px;
+    min-width: unset;
+    flex: 0 0 auto;
+    height: auto;
+    min-height: 120px;
+    padding: 20px 28px;
+  }
+
+  .about-center-badge {
+    align-self: center;
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-years-val {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .about-years-lbl {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .about-clients-val {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .about-clients-lbl {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .about-bitcoin-icon {
+    width: 72px;
+    height: 72px;
+  }
+}

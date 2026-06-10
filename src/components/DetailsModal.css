@@ -1,0 +1,73 @@
+/* Details Modal reuses .modal-backdrop, .modal-close from BookDemoModal.css */
+.details-modal-box {
+  max-width: 600px;
+}
+
+.details-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--clr-border);
+  margin-bottom: 24px;
+}
+.details-icon {
+  width: 64px; height: 64px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.details-title {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  margin-top: 4px;
+}
+
+.details-content {
+  font-size: 15px;
+  color: var(--clr-text-muted);
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.details-points {
+  background: var(--clr-bg-glass);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  margin-bottom: 24px;
+}
+.details-points-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--clr-text-muted);
+  margin-bottom: 14px;
+}
+.details-point-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--clr-text);
+  padding: 7px 0;
+  border-bottom: 1px solid var(--clr-border);
+}
+.details-point-item:last-child { border-bottom: none; }
+
+.details-footer {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 480px) {
+  .details-footer { flex-direction: column; }
+  .details-footer .btn { width: 100%; justify-content: center; }
+}

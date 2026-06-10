@@ -1,0 +1,201 @@
+/* ============================================================
+   ELAF KNOWLEDGE SYSTEMS — FIGMA DESIGN v1
+   White bg · Space Grotesk · #5846FB purple · #0A1628 navy
+   ============================================================ */
+
+/* === Fonts === */
+/* Space Grotesk, Inter, Arvo, Montserrat loaded via Google Fonts in index.html */
+
+:root {
+  --clr-bg: #FFFFFF;
+  --clr-black: #000000;
+  --clr-navy: #0A1628;
+  --clr-navy-2: #111F34;
+  --clr-navy-3: #202D40;
+  --clr-navy-4: #394C69;
+  --clr-navy-5: #546F9A;
+  --clr-navy-6: #739AD9;
+  --clr-purple: #5846FB;
+  --clr-blue: #1668E8;
+  --clr-gray: #F0F0F0;
+  --clr-gray-2: #E5E4E2;
+  --clr-dark-card: #1F2123;
+  --clr-yellow: #FFC200;
+  --clr-orange: #F97316;
+  --clr-green: #00ECB5;
+  --clr-text: #0A1628;
+  --clr-text-muted: #334155;
+  --clr-text-dim: rgba(10,22,40,0.5);
+  --clr-white: #FFFFFF;
+  --clr-white-dim: #E5E4E2;
+  --clr-white-muted: rgba(255,255,255,0.7);
+
+  --font-body: 'Space Grotesk', system-ui, sans-serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-arvo: 'Arvo', Georgia, serif;
+  --font-montserrat: 'Montserrat', system-ui, sans-serif;
+
+  --container-max: 1710px;
+  --container-pad: clamp(24px, 5.4vw, 105px);
+
+  --radius-xs: 5px;
+  --radius-sm: 10px;
+  --radius-md: 20px;
+  --radius-lg: 40px;
+  --radius-xl: 72px;
+  --radius-pill: 100px;
+
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* === Reset === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+ul, ol { list-style: none; }
+
+/* === Scrollbar === */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--clr-gray); }
+::-webkit-scrollbar-thumb { background: var(--clr-purple); border-radius: 3px; }
+
+/* === Container === */
+.container {
+  width: 100%;
+  max-width: calc(var(--container-max) + var(--container-pad) * 2);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+/* === Animations === */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes count-up-fill {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes modal-in {
+  from { opacity: 0; transform: scale(0.94) translateY(16px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes slide-right {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+/* === Blur reveal (word stagger) === */
+.blur-reveal .word {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(12px);
+  transform: translateY(4px);
+  transition:
+    opacity 0.9s var(--ease),
+    filter 0.9s var(--ease),
+    transform 0.9s var(--ease);
+  transition-delay: var(--delay, 0ms);
+}
+
+.blur-reveal .word.visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+/* === Scroll reveal === */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+.reveal-d5 { transition-delay: 0.5s; }
+
+/* === Utility Buttons === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  transition: all 0.25s var(--ease);
+  cursor: pointer;
+  border: none;
+}
+.btn-purple {
+  background: var(--clr-purple);
+  color: #fff;
+  font-size: 20px;
+  padding: 18px 32px;
+}
+.btn-purple:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(88,70,251,0.35); }
+
+.btn-blue {
+  background: var(--clr-blue);
+  color: #fff;
+  font-size: 17px;
+  padding: 14px 26px;
+  border-radius: var(--radius-xs);
+}
+.btn-blue:hover { opacity: 0.9; transform: translateY(-1px); }
+
+.btn-outline {
+  background: transparent;
+  color: #BBBBBB;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: underline;
+  padding: 0;
+  border-radius: 0;
+}
+.btn-outline:hover { color: var(--clr-text); }
+
+/* === Section Spacing === */
+.section { padding: clamp(60px, 8vw, 120px) 0; }
+.section-black {
+  background: var(--clr-black);
+  color: var(--clr-white);
+  border-radius: var(--radius-xl);
+}
+
+/* === Responsive hide === */
+@media (max-width: 768px) { .hide-mobile { display: none !important; } }
+@media (min-width: 769px) { .hide-desktop { display: none !important; } }

@@ -1,0 +1,127 @@
+/* ===== DIVISIONS ===== */
+.divisions-section {
+  background: var(--clr-black);
+  border-radius: 72px;
+  margin: 0 0 0 0;
+  padding: clamp(60px, 8vw, 150px) 0;
+  color: #fff;
+}
+
+.divisions-layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 441px);
+  gap: clamp(40px, 5vw, 80px);
+  align-items: center;
+}
+
+/* Left */
+.div-spec {
+  color: #5846FB;
+  font-family: var(--font-body);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+  margin-bottom: 16px;
+}
+
+.div-title {
+  width: 963px;
+  max-width: 100%;
+  color: #FFF;
+  font-family: var(--font-body);
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 96px;
+  letter-spacing: -1.4px;
+  margin-bottom: 32px;
+}
+
+.div-sub {
+  width: 908px;
+  max-width: 100%;
+  color: #FFF;
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+  margin-bottom: 40px;
+}
+
+.div-actions { display: flex; align-items: center; gap: 20px; }
+
+.div-explore-btn {
+  width: 341px;
+  height: 60px;
+  padding: 0;
+  border-radius: 100px;
+  background: #5846FB;
+  color: #FFF;
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  box-sizing: border-box;
+}
+
+/* Right — exchange chart image */
+.div-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+}
+
+.div-visual-img {
+  width: 441px;
+  height: 784px;
+  max-width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 30px;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .div-title {
+    width: 100%;
+    font-size: clamp(32px, 5vw, 70px);
+    line-height: clamp(44px, 6.8vw, 96px);
+    letter-spacing: clamp(-0.8px, -0.12vw, -1.4px);
+  }
+
+  .div-sub {
+    width: 100%;
+    font-size: clamp(16px, 1.8vw, 22px);
+    line-height: clamp(26px, 3vw, 36px);
+  }
+}
+
+@media (max-width: 900px) {
+  .divisions-layout {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .divisions-section { border-radius: 40px; }
+
+  .div-visual {
+    max-width: 441px;
+    margin: 0 auto;
+  }
+
+  .div-visual-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .div-explore-btn {
+    width: 100%;
+    max-width: 341px;
+  }
+}
